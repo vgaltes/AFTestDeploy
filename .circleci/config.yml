@@ -9,5 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install
+          name: Install azure functions core tools
           command: npm install azure-functions-core-tools
+      - run:
+          name: Test azure functions core tools
+          command: func
