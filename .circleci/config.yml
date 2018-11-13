@@ -10,4 +10,4 @@ jobs:
       - checkout
       - run:
           name: Install
-          command: npm install -g azure-functions-core-tools
+          command: npm install azure-functions-core-tools
