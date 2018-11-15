@@ -15,5 +15,18 @@ jobs:
           name: Login into azure
           command: ./login.sh
       - run:
+          name: Create local.settings.json
+          command: |
+            cat > local.setttings.json << EOF                                                                                                         ✘ 1
+            {
+                "IsEncrypted": false,
+                "Values": {
+                    "AzureWebJobsStorage": "",
+                    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+                }
+            }
+            EOF
+
+      - run:
           name: Deploy
           command: ./deploy.sh AFTestDeploy westeurope uat
