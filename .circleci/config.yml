@@ -17,13 +17,13 @@ jobs:
       - run:
           name: Create local.settings.json
           command: |
-            cat > local.setttings.json << EOF                                                                                                         ✘ 1
+            cat > local.settings.json << EOF
             {
-                "IsEncrypted": false,
-                "Values": {
-                    "AzureWebJobsStorage": "",
-                    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-                }
+              "IsEncrypted": false,
+              "Values": {
+                "AzureWebStorage": "",
+                "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+              }
             }
             EOF
 
