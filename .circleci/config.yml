@@ -9,11 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Where I am
-          command: pwd
-      - run:
           name: Login into azure
-          command: ./login.sh
+          command: az login --service-principal -u $azPrincipal -p $azPassword -t $azTenant
       - run:
           name: Create local.settings.json
           command: |
