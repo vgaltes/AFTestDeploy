@@ -2,15 +2,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.10
+      - image: vicencgarcia/azurefunctionsbuildanddeploy:1.0
 
     working_directory: ~/repo
 
     steps:
       - checkout
       - run:
-          name: Install azure functions core tools
-          command: npm install azure-functions-core-tools
+          name: Login into azure
+          command: ./login.sh
       - run:
-          name: Test azure functions core tools
-          command: func
+          name: Deploy
+          command: ./deploy.sh AFTestDeploy westeurope uat
